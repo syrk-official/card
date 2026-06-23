@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SYRK | 山下 蓮太郎</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Serif JP', serif;
+  background: #fdfcf9;
+  color: #2a2620;
+  line-height: 1.9;
+  letter-spacing: 0.05em;
+  overflow-x: hidden;
+}
+.container { max-width: 480px; margin: 0 auto; padding: 0 28px; }
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 28px;
+  background: linear-gradient(180deg, #fdfcf9 0%, #f5f1ea 100%);
+}
+.hero img { width: 220px; max-width: 70%; margin-bottom: 32px; }
+.hero .tag {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  letter-spacing: 0.5em;
+  color: #b8956a;
+  margin-bottom: 10px;
+}
+.hero .name {
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  color: #6b6258;
+}
+.scroll-hint {
+  margin-top: 50px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 0.4em;
+  color: #b8956a;
+}
+section { padding: 70px 0; }
+.label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 0.5em;
+  color: #b8956a;
+  text-align: center;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.divider { width: 40px; height: 1px; background: #b8956a; margin: 0 auto 36px; }
+.section-title {
+  font-size: 14px;
+  letter-spacing: 0.4em;
+  text-align: center;
+  margin-bottom: 36px;
+  font-weight: 400;
+}
+.profile h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  letter-spacing: 0.15em;
+  text-align: center;
+  font-weight: 400;
+}
+.profile .jp-name {
+  font-size: 13px;
+  letter-spacing: 0.4em;
+  text-align: center;
+  color: #6b6258;
+  margin-top: 6px;
+  margin-bottom: 36px;
+}
+.timeline { margin-top: 20px; }
+.timeline-item { margin-bottom: 28px; }
+.timeline-date {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  color: #b8956a;
+  margin-bottom: 8px;
+}
+.timeline-text {
+  font-size: 13px;
+  line-height: 2;
+  color: #4a4239;
+}
+.business { background: #f5f1ea; }
+.info-block { text-align: center; margin-bottom: 28px; }
+.info-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 10px;
+  letter-spacing: 0.4em;
+  color: #b8956a;
+  margin-bottom: 8px;
+}
+.info-value {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: #2a2620;
+  line-height: 1.8;
+}
+.info-value a { color: #2a2620; text-decoration: none; border-bottom: 1px solid #d4c4a8; }
+.links a.link-btn {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 12px;
+  background: #fff;
+  border: 1px solid #d4c4a8;
+  color: #2a2620;
+  text-decoration: none;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  font-family: 'Cormorant Garamond', 'Noto Serif JP', serif;
+  transition: all 0.3s;
+}
+.links a.link-btn:hover { background: #b8956a; color: #fff; border-color: #b8956a; }
+.private { background: #2a2620; color: #d4c4a8; }
+.private .label { color: #d4c4a8; }
+.private .divider { background: #d4c4a8; }
+.private .section-title { color: #f5f1ea; }
+.lock-box {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid #4a4239;
+  padding: 32px 24px;
+  text-align: center;
+  margin-top: 20px;
+}
+.lock-icon { font-size: 28px; margin-bottom: 14px; }
+.lock-text {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: #d4c4a8;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+.lock-input {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid #d4c4a8;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  font-family: inherit;
+  margin-bottom: 12px;
+}
+.lock-input::placeholder { color: #6b6258; }
+.lock-btn {
+  width: 100%;
+  padding: 12px;
+  background: #d4c4a8;
+  color: #2a2620;
+  border: none;
+  font-size: 12px;
+  letter-spacing: 0.4em;
+  font-family: 'Cormorant Garamond', serif;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.lock-btn:hover { background: #fff; }
+.lock-error {
+  color: #d49b9b;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  margin-top: 12px;
+  min-height: 16px;
+}
+.private-content { display: none; margin-top: 20px; }
+.private-content.show { display: block; }
+.private-content a.private-link {
+  display: block;
+  padding: 16px;
+  margin-bottom: 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid #d4c4a8;
+  color: #d4c4a8;
+  text-decoration: none;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+}
+footer {
+  background: #2a2620;
+  color: #6b6258;
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 0.4em;
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <img src="logo.png" alt="SYRK">
+  <div class="tag">BEAUTY SALON</div>
+  <div class="name">山下 蓮太郎</div>
+  <div class="scroll-hint">SCROLL ↓</div>
+</div>
+
+<section class="profile">
+  <div class="container">
+    <div class="label">Profile</div>
+    <div class="divider"></div>
+    <h2>RENTARO YAMASHITA</h2>
+    <div class="jp-name">山下 蓮太郎</div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">〜 2021</div>
+        <div class="timeline-text">実家の茶園にて、父の元で約10年間、茶栽培に従事。全国茶品評会にて玉露が上位入賞、玉露園の部で農林水産大臣賞を受賞。</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2021 — 2026</div>
+        <div class="timeline-text">良質な茶を作る技術はあっても、それを売る術がないという現実に直面し、美容業界へ転身。営業・接客業務を通じて、人と向き合う力を培う。<br><br>現場での経験から、契約数を追うことよりも、働く従業員と来店されるお客様、その両方を大切にする経営の在り方に価値を見出す。従業員を守ることがお客様の満足につながるという信念のもと、独立を決意。</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2026 / 06</div>
+        <div class="timeline-text">福岡市中央区今泉にて美容サロン「SYRK」を開業。脱毛事業を主軸に、フェイシャルエステを展開。</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">FUTURE</div>
+        <div class="timeline-text">茶と美容を融合させた事業展開を視野に、福岡を拠点に挑戦を続ける。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="business">
+  <div class="container">
+    <div class="label">Business</div>
+    <div class="divider"></div>
+
+    <div class="info-block">
+      <div class="info-label">Brand</div>
+      <div class="info-value">SYRK</div>
+    </div>
+    <div class="info-block">
+      <div class="info-label">Service</div>
+      <div class="info-value">メンズ・レディース脱毛<br>フェイシャルエステ</div>
+    </div>
+    <div class="info-block">
+      <div class="info-label">Address</div>
+      <div class="info-value">〒810-0021<br>福岡県福岡市中央区今泉2-4-21<br>TONOクリスタル上人橋 503</div>
+    </div>
+    <div class="info-block">
+      <div class="info-label">Hours</div>
+      <div class="info-value">11:00 — 20:00<br>定休日：日曜</div>
+    </div>
+    <div class="info-block">
+      <div class="info-label">Tel</div>
+      <div class="info-value"><a href="tel:07089507951">070-8950-7951</a></div>
+    </div>
+    <div class="info-block">
+      <div class="info-label">Email</div>
+      <div class="info-value"><a href="mailto:syrk.official.jp@gmail.com">syrk.official.jp@gmail.com</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="links">
+  <div class="container">
+    <div class="label">Contact</div>
+    <div class="divider"></div>
+    <a class="link-btn" href="https://lin.ee/9cb7Ic5" target="_blank">OFFICIAL LINE</a>
+    <a class="link-btn" href="https://www.instagram.com/syrk_official" target="_blank">INSTAGRAM</a>
+    <a class="link-btn" href="https://lit.link/SYRK_official" target="_blank">LIT.LINK</a>
+  </div>
+</section>
+
+<section class="private">
+  <div class="container">
+    <div class="label">Private</div>
+    <div class="divider"></div>
+
+    <div class="lock-box" id="lockBox">
+      <div class="lock-icon">🔐</div>
+      <div class="lock-text">特別な方へ。<br>合言葉をお持ちの方のみご覧いただけます。</div>
+      <input type="password" class="lock-input" id="passInput" placeholder="合言葉">
+      <button class="lock-btn" onclick="unlock()">UNLOCK</button>
+      <div class="lock-error" id="errorMsg"></div>
+    </div>
+
+    <div class="private-content" id="privateContent">
+      <a class="private-link" href="tel:08027516744">📞 080-2751-6744</a>
+      <a class="private-link" href="#" id="personalLine">💬 個人LINE（リンクを設定してください）</a>
+      <div style="text-align:center; margin-top:20px; font-size:11px; letter-spacing:0.2em; color:#6b6258;">24h / 366days</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © SYRK 2026
+</footer>
+
+<script>
+function unlock() {
+  var input = document.getElementById('passInput').value;
+  var error = document.getElementById('errorMsg');
+  if (input === 'ひらけごま') {
+    document.getElementById('lockBox').style.display = 'none';
+    document.getElementById('privateContent').classList.add('show');
+  } else {
+    error.textContent = '合言葉が違います';
+    setTimeout(function(){ error.textContent = ''; }, 2000);
+  }
+}
+document.getElementById('passInput').addEventListener('keypress', function(e){
+  if (e.key === 'Enter') unlock();
+});
+</script>
+
+</body>
+</html>
