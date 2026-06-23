@@ -19,7 +19,6 @@
     font-weight:300;
     overflow-x:hidden;
   }
-  /* 大理石背景テクスチャ */
   body::before{
     content:'';
     position:fixed;
@@ -31,8 +30,6 @@
     z-index:-1;
   }
   .container{max-width:440px;margin:0 auto;padding:0 32px;}
-
-  /* ===== HERO ===== */
   .hero{
     min-height:100vh;
     display:flex;
@@ -80,8 +77,6 @@
     text-indent:0.6em;
     animation:fadeUp 1.8s ease 1s both, bounce 2.5s ease-in-out 2s infinite;
   }
-
-  /* ===== セクション共通 ===== */
   section{padding:100px 0;}
   .label{
     font-family:'Cormorant Garamond',serif;
@@ -99,8 +94,6 @@
     background:#b8826a;
     margin:0 auto 56px;
   }
-
-  /* ===== PROFILE ===== */
   .profile-name-en{
     font-family:'Cormorant Garamond',serif;
     font-size:32px;
@@ -143,8 +136,6 @@
     color:#4a4239;
     font-weight:300;
   }
-
-  /* ===== BUSINESS ===== */
   .business{background:rgba(245,240,232,0.5);}
   .info-block{
     text-align:center;
@@ -185,8 +176,6 @@
     border-bottom:1px solid rgba(184,130,106,0.4);
     padding-bottom:2px;
   }
-
-  /* ===== CONTACT ===== */
   .contact{padding:100px 0;}
   .link-btn{
     display:block;
@@ -203,8 +192,6 @@
     letter-spacing:0.5em;
     text-indent:0.5em;
     transition:all 0.5s ease;
-    position:relative;
-    overflow:hidden;
   }
   .link-btn.primary{
     background:#b8826a;
@@ -217,8 +204,6 @@
     border-color:#b8826a;
     letter-spacing:0.6em;
   }
-
-  /* ===== PRIVATE ===== */
   .private{
     background:linear-gradient(180deg,#2a2520 0%,#1f1b17 100%);
     color:#d4c4a8;
@@ -320,8 +305,6 @@
     border-bottom:1px solid rgba(184,130,106,0.4);
     padding-bottom:2px;
   }
-
-  /* ===== FOOTER ===== */
   footer{
     text-align:center;
     padding:40px 32px;
@@ -332,8 +315,6 @@
     letter-spacing:0.5em;
     text-indent:0.5em;
   }
-
-  /* ===== アニメーション ===== */
   @keyframes fadeUp{
     from{opacity:0;transform:translateY(30px);}
     to{opacity:1;transform:translateY(0);}
@@ -346,16 +327,14 @@
 </head>
 <body>
 
-<!-- HERO -->
 <section class="hero">
-  <img src="logo.png" alt="SYRK" class="hero-logo">
+  <img src="ロゴ白大理石.PNG" alt="SYRK" class="hero-logo">
   <div class="hero-tag">BEAUTY SALON</div>
   <div class="hero-divider"></div>
   <div class="hero-name">山下　蓮太郎</div>
   <div class="scroll-hint">SCROLL ↓</div>
 </section>
 
-<!-- PROFILE -->
 <section>
   <div class="container">
     <div class="label">PROFILE</div>
@@ -385,7 +364,6 @@
   </div>
 </section>
 
-<!-- BUSINESS -->
 <section class="business">
   <div class="container">
     <div class="label">BUSINESS</div>
@@ -423,7 +401,6 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact">
   <div class="container">
     <div class="label">CONTACT</div>
@@ -435,7 +412,6 @@
   </div>
 </section>
 
-<!-- PRIVATE -->
 <section class="private">
   <div class="container">
     <div class="label">PRIVATE</div>
@@ -469,7 +445,6 @@
 <footer>© SYRK 2026</footer>
 
 <script>
-  // パスワード機能
   function unlock(){
     var input = document.getElementById('passInput').value.trim();
     var error = document.getElementById('errorMsg');
@@ -483,12 +458,9 @@
       setTimeout(function(){error.textContent = '';}, 2500);
     }
   }
-  // Enterキーでも解錠
   document.getElementById('passInput').addEventListener('keypress', function(e){
     if(e.key === 'Enter') unlock();
   });
-
-  // スクロールでフェードイン
   var observer = new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
       if(entry.isIntersecting){
